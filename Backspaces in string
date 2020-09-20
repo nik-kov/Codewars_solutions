@@ -1,0 +1,22 @@
+// Assume "#" is like a backspace in string.
+// This means that string "a#bc#d" actually is "bd"
+//Your task is to process a string with "#" symbols.
+// Предположим, что «#» - это как возврат в строку.
+// Это означает, что строка «a # bc # d» на самом деле является «bd»
+// Ваша задача - обработать строку с символами "#".
+
+function cleanString(s) {
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '#'){
+      arr.pop()
+      continue;
+    }
+    arr.push(s[i]);
+  }
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str += arr[i];
+  }
+  return str;
+};
